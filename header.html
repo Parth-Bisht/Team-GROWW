@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header.css">
+    <script src="https://kit.fontawesome.com/157f106a6a.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header">
+        <!-------navbar is here just import it from components-------->
+    </div>
+</body>
+<script type="module">
+    import header from "./components/header.js";  //importing header
+    let parent = document.getElementById('header'); //grabing header
+    parent.innerHTML = header(); //function call
+</script>
+
+</html>
