@@ -8,7 +8,11 @@ body{
 }
 
 #main{
+<<<<<<< Updated upstream
     visibility: hidden;
+=======
+    /* visibility: hidden; */
+>>>>>>> Stashed changes
     
 }
 

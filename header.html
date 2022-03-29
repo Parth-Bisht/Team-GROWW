@@ -15,6 +15,7 @@
     </div>
 </body>
 <script type="module">
+<<<<<<< Updated upstream
     import header from "./components/header.js";  //importing header
     let parent = document.getElementById('header'); //grabing header
     parent.innerHTML = header(); //function call
@@ -27,6 +28,50 @@
 
 
 
+=======
+    import header from "./components/header.js";
+    import { getData } from "./components/getandappend.js";
+    let parent = document.getElementById('header');
+    parent.innerHTML = header();
+
+
+    let stocks = document.getElementById('stocks');
+    let mutualfunds = document.getElementById('mutual');
+    let fixed = document.getElementById('fixed');
+    let us = document.getElementById('us');
+    stocks.addEventListener('click', () => {
+        slider.style.left = "110px";
+        slider.style.width = "64px";
+    })
+    mutualfunds.addEventListener('click', () => {
+        slider.style.left = "205px";
+        slider.style.width = "119px";
+    })
+    fixed.addEventListener('click', () => {
+
+        slider.style.left = "358px";
+        slider.style.width = "128px";
+        // window.location.href="fixeddepo.html"
+    })
+    us.addEventListener('click', () => {
+        slider.style.left = "524px";
+        slider.style.width = "90px";
+    })
+    let dropdownboxcaller = document.getElementById('dd');
+    let dropdownbox = document.getElementById('dropdown');
+    var count = 0;
+    dropdownboxcaller.addEventListener('click', function () {
+        count++;
+        if (count % 2 == 1) {
+            dropdownbox.style.display = 'block'
+        }
+        else {
+            dropdownbox.style.display = 'none'
+        }
+    })
+    let response = await getData('http://localhost:3000/products');
+    console.log(response)
+>>>>>>> Stashed changes
 </script>
 
 </html>
