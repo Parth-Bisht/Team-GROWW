@@ -44,13 +44,13 @@
     })
     let dropdownboxcaller = document.getElementById('dd');
     let dropdownbox = document.getElementById('dropdown');
+    var count = 0;
     dropdownboxcaller.addEventListener('click', function () {
-        if (dropdownbox.style.display = 'none') {
-
+        count++;
+        if (count % 2 == 1) {
             dropdownbox.style.display = 'block'
         }
-        else if (dropdownbox.style.display = 'block') {
-            console.log("chl")
+        else {
             dropdownbox.style.display = 'none'
         }
     })
