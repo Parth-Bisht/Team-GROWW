@@ -12,7 +12,9 @@ const header = () => {
     </div>
     <div id="searchlinks">
         <div id="searchbox">
-        <i class="fa-solid fa-magnifying-glass position"></i> <input type="text" placeholder="What are you looking for today?">
+        <i class="fa-solid fa-magnifying-glass position"></i> <input id="searchinput" type="text" placeholder="What are you looking for today?">
+        <div id="searchDrop">
+        </div>
         </div>
         <div id="profilelinks">
             <i class="fa-regular fa-bell leftmargin"></i>
