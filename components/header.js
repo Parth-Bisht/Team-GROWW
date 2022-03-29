@@ -29,8 +29,8 @@ const header = () => {
 <div id="facilities">
     <div>Stocks</div>
     <div class="mleft">Mutual Funds</div>
-    <div class="mleft">Fixed Deposits</div>
-    <div class="mleft">US Stocks</div>
+    <div class="mleft" id="fixed-deposit">Fixed Deposits</div>
+    <div class="mleft" id="us-stocks">US Stocks</div>
 </div>`
 }
 
