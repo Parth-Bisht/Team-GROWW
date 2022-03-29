@@ -113,12 +113,12 @@
 }
 
 #slider{
-    border: 2px solid #00d09c;
+    border-bottom: 2px solid #00d09c;
     transform: rotate(180deg);
     position: absolute;
     width: 61px;
-    top: 56px;
-    left: 114px;
+    top: 54px;
+    left: 100px;
     transition: all 0.5s ease-in-out;
 }
 
