@@ -46,11 +46,13 @@
 }
 #searchbox{
     width: 60%;
+    position: relative;
 }
 #searchbox>input{
     width: 100%;
     border-radius: 8px;
     padding: 8px;
+    padding-left: 32px;
     /* height: 30px; */
     font-size: 17px;
     outline: none;
@@ -92,6 +94,7 @@
     padding-left: 8.5%;
     font-size: 19px;
     color: #44475b;
+    position: relative;
 }
 #facilities>div{
     cursor: pointer;
@@ -101,4 +104,70 @@
 }
 .mleft{
     margin-left: 40px;
+}
+.position{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    color: #828283
+}
+
+#slider{
+    border: 2px solid #00d09c;
+    transform: rotate(180deg);
+    position: absolute;
+    width: 61px;
+    top: 56px;
+    left: 114px;
+    transition: all 0.5s ease-in-out;
+}
+
+#dropdown{
+    /* border: 1px solid black; */
+    position: absolute;
+    width: 385px;
+    right: 139px;
+    /* height: 200px; */
+    /* padding: 10px; */
+    /* background-color: #828283; */
+    z-index: 2;
+    background-color: #f1f1f1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: none;
+}
+#dropdown>div{
+    display: flex;
+    
+}
+#userinfo{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #ebebeb;
+}
+#nameid{
+    font-size: 15px;
+    color: rgb(80, 79, 80);
+    margin-left: 15px;
+}
+#nameid>p:first-child{
+    font-size: 16px;
+    font-weight: 600;
+}
+#nameid>p:last-child{
+    margin-top: 3px;
+}
+.dropinfo{
+    margin: 8px 0px;
+    font-size: 15px;
+    /* border: 1px solid teal; */
+    padding: 13px 18px;
+    background-color: #ebebeb;
+}
+.dropinfo:hover{
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+.dropinfo>p{
+    margin-left: 5px;
 }

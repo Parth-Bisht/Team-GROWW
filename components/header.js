@@ -12,7 +12,7 @@ const header = () => {
     </div>
     <div id="searchlinks">
         <div id="searchbox">
-            <input type="text" placeholder="What are you looking for today?">
+        <i class="fa-solid fa-magnifying-glass position"></i> <input type="text" placeholder="What are you looking for today?">
         </div>
         <div id="profilelinks">
             <i class="fa-regular fa-bell leftmargin"></i>
@@ -21,16 +21,55 @@ const header = () => {
             <div class="leftmargin" id="profile">
 
                 <img src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
+                <div id="dropdown">
+                <div id="userinfo">
+                    <div id="profile">
+                        <img src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
+                    </div>
+                    <div id="nameid">
+                        <p>Parth Bisht</p>
+                        <p>bishtparth795@gmail.com</p>
+                    </div>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-building-columns"></i><p>Bank & Autopay</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-folder"></i><p>Import Funds</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-tag"></i><p>Watchlist</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-note-sticky"></i><p>Orders</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-calendar-days"></i><p>SIPs</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-phone"></i><p>Help & Support</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-gear"></i><p>Settings</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-moon"></i><p>Dark Mode</p>
+                </div>
+                <div class="dropinfo">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i><p>Log Out</p>
+                </div>
             </div>
-            <i style="font-size: 14px;margin-left: 3px;" class="fa-solid fa-chevron-down"></i>
+            </div class="dropinfo">
+            <i style="font-size: 14px;margin-left: 3px;" id="dd" class="fa-solid fa-chevron-down"></i>
         </div>
     </div>
 </div>
 <div id="facilities">
-    <div>Stocks</div>
-    <div class="mleft">Mutual Funds</div>
-    <div class="mleft">Fixed Deposits</div>
-    <div class="mleft">US Stocks</div>
+    <div id="slider"></div>
+    <div id="stocks">Stocks</div>
+    <div id="mutual" class="mleft">Mutual Funds</div>
+    <div id="fixed" class="mleft">Fixed Deposits</div>
+    <div id="us" class="mleft">US Stocks</div>
 </div>`
 }
 

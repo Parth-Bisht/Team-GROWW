@@ -13,12 +13,47 @@
 <body>
     <div id="header">
         <!-------navbar is here just import it from components-------->
+
     </div>
 </body>
 <script type="module">
     import header from "./components/header.js";  //importing header
     let parent = document.getElementById('header'); //grabing header
     parent.innerHTML = header(); //function call
+
+
+    let stocks = document.getElementById('stocks');
+    let mutualfunds = document.getElementById('mutual');
+    let fixed = document.getElementById('fixed');
+    let us = document.getElementById('us');
+    stocks.addEventListener('click', () => {
+        slider.style.left = "114px";
+        slider.style.width = "61px";
+    })
+    mutualfunds.addEventListener('click', () => {
+        slider.style.left = "211px";
+        slider.style.width = "119px";
+    })
+    fixed.addEventListener('click', () => {
+        slider.style.left = "366px";
+        slider.style.width = "128px";
+    })
+    us.addEventListener('click', () => {
+        slider.style.left = "530px";
+        slider.style.width = "90px";
+    })
+    let dropdownboxcaller = document.getElementById('dd');
+    let dropdownbox = document.getElementById('dropdown');
+    dropdownboxcaller.addEventListener('click', function () {
+        if (dropdownbox.style.display = 'none') {
+
+            dropdownbox.style.display = 'block'
+        }
+        else if (dropdownbox.style.display = 'block') {
+            console.log("chl")
+            dropdownbox.style.display = 'none'
+        }
+    })
 </script>
 
 </html>
