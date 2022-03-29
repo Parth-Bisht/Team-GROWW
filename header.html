@@ -17,9 +17,10 @@
     </div>
 </body>
 <script type="module">
-    import header from "./components/header.js";  //importing header
-    let parent = document.getElementById('header'); //grabing header
-    parent.innerHTML = header(); //function call
+    import header from "./components/header.js";
+    import { getData } from "./components/getandappend.js";
+    let parent = document.getElementById('header');
+    parent.innerHTML = header();
 
 
     let stocks = document.getElementById('stocks');
@@ -54,6 +55,8 @@
             dropdownbox.style.display = 'none'
         }
     })
+    let response = await getData('http://localhost:3000/products');
+    console.log(response)
 </script>
 
 </html>
