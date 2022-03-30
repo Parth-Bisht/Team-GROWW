@@ -164,6 +164,36 @@
             border: 1px solid rgba(158, 152, 152, 0.74);
 
         }
+
+        #funds{
+    display: flex;
+    justify-content: space-evenly;
+}
+#funds>div{
+    /* border: 2px solid rebeccapurple; */
+    height: 180px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 23%;
+    padding: 10px;
+    cursor: pointer;
+}
+#funds>div>img{
+    border: 1px solid #d1d1d1;
+    padding: 3px;
+    border-radius: 5px;
+    width: 30%;
+}
+#funds>div>p{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 16px;
+    color: #44475b;
+}
+#shareholder>h3{
+    margin-bottom: 30px;
+    margin-left: 10px;
+    font-size: large;
+}
        
     </style>
 </head>
@@ -187,8 +217,18 @@
                 <img src="./Images/analystEst.png" alt="">
             </div>
             <div id="shareholder">
-                <img src="./Images/shareHolder.png" alt="">
+                <h3>Recently Viewed</h3>
+                <div id="funds">
+                
+                </div>
             </div>
+            
+
+
+
+
+
+
         </div>
         <div id="buyStocks">
             <div id="insideDiv">
@@ -323,6 +363,49 @@
         document.getElementById("stckDiv").append(div);
 
     })
+
+
+
+
+
+
+
+    let fundsData = await getData('http://localhost:3000/products');
+    let fundsContainer = document.getElementById('funds');
+    appendFunds(fundsData);
+    function appendFunds(data) {
+        fundsContainer.innerHTML = '';
+        for (let i = 0; i < 4; i++) {
+            let div = document.createElement('div');
+            div.addEventListener("click", () => {
+                let arr = [];
+                arr.push(data[i]);
+                localStorage.setItem('stock', JSON.stringify(arr));
+                // console.log(arr);
+            })
+
+
+            let image = document.createElement('img');
+            image.src = data[i].product_image;
+
+            let name = document.createElement('p');
+            name.innerText = data[i].product_name;
+
+            let percentage = document.createElement('p');
+            percentage.innerText = data[i].percentage_interval[2];
+
+            div.append(image, name, percentage);
+            // console.log(div);
+            fundsContainer.append(div);
+        }
+    }
+
+
+
+
+
+
+
 
 
 
