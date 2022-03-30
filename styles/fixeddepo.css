@@ -129,3 +129,8 @@ border-radius: 6px;
 .frontDiv h5{
     color: #44475b;
 }
+#footer{
+    position: relative;
+    margin-top: 120%;
+    margin-bottom: 10px;
+}

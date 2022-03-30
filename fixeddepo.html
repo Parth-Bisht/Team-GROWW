@@ -33,7 +33,7 @@
                     </div>
                     <div class="boxes">
                         <div class="shadow">
-                            <h1 id="interest"></h1>
+                            <h1 id="interest">8.02%</h1>
                             <p>1 Year</p>
                         </div>
                         <div class="shadow">
@@ -184,9 +184,9 @@
 <!--end fixed deposit  -->
 
 
-<!-- <div id="footer">
+<div id="footer">
 
-</div> -->
+</div>
 
     
 </body>
@@ -197,7 +197,10 @@
     let parent = document.getElementById('header');
     parent.innerHTML = header();
 
-    
+    import footer from "./components/footer.js";
+    let parent2 = document.getElementById('footer');
+    parent2.innerHTML = footer();
+
 let stocks = document.getElementById('stocks');
     let mutualfunds = document.getElementById('mutual');
     let fixed = document.getElementById('fixed');
@@ -268,13 +271,11 @@ let stocks = document.getElementById('stocks');
 
 
 
-    // <footer>
+ 
+// footer
+ 
     
-    
-        // import footer from "./components/footer.js";
-        // let parent2 = document.getElementById('footer');
-        // parent2.innerHTML = footer();
-    // </footer>
+
 </script>
 
 <script src="./JS/fixeddepo.js"></script>
