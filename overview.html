@@ -26,7 +26,7 @@
         #container>:nth-child(1){
             margin-bottom: 10px;
             margin-left: 110px;
-            height: 330px;
+            height: 250px;
             width: 680px;
         }
         #container>:nth-child(2){
@@ -119,15 +119,44 @@
        #addCart>div:hover{
            color: #00d09c;
            }
-#slider{
-    border-bottom: 2px solid #04dda7;
-    transform: rotate(180deg);
-    position: absolute;
-    width: 61px;
-    top: 58px;
-    left: 110px;
-    transition: all 0.5s ease-in-out;
-}
+       #slider{
+           border-bottom: 2px solid #04dda7;
+           transform: rotate(180deg);
+           position: absolute;
+           width: 61px;
+           top: 58px;
+           left: 110px;
+           transition: all 0.5s ease-in-out;
+        }
+        .cnt{
+            height: 100%;
+            width: 50%;
+        }
+        .cnt>div{
+            margin-top: 40px;
+            width: 14%;
+            height: 14%;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .cnt>div>img{
+            width: 100%;
+            height: 100%;
+        }
+        .cnt>p, .cnt>h1{
+            margin-top: 40px;
+        }
+        .cnt>p{
+            font-size: larger;
+            font-weight: 500;
+        }
+        #stckDiv{
+            display: flex;
+        }
+        .cnt1{
+            height: 100%;
+            width: 50%;
+        }
     </style>
 </head>
 
@@ -139,7 +168,7 @@
     <div id="line"></div>
     <div id="main">
         <div id="container">
-            <div id="stckDis"></div>
+            <div id="stckDiv"></div>
             <div id="graph">
                 <img src="./Images/graph.png" alt="">
             </div>
@@ -252,6 +281,35 @@
             console.log(event.target);
             searchBar.style.display = "none";
         }
+    })
+
+    let data = JSON.parse(localStorage.getItem("stock"));
+    console.log(data);
+
+    data.forEach(function(el){
+        let div = document.createElement("div");
+        div.setAttribute("class","cnt")
+
+        let inrDiv = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = el.product_image;
+
+        let name = document.createElement("p");
+        name.innerText = el.amc;
+
+        let price = document.createElement("h1");
+        price.innerText = `$ `+ el.price;
+
+
+        let div1 = 
+
+
+        inrDiv.append(img);
+        div.append(inrDiv, name, price);
+
+        document.getElementById("stckDiv").append(div);
+
     })
 
 </script>
