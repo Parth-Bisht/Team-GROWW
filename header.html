@@ -18,7 +18,7 @@
 </body>
 <script type="module">
     import header from "./components/header.js";
-    import { getData } from "./components/getandappend.js";
+    import { getData, appendData } from "./components/getandappend.js";
     let parent = document.getElementById('header');
     parent.innerHTML = header();
 
@@ -43,6 +43,8 @@
         slider.style.left = "524px";
         slider.style.width = "90px";
     })
+
+
     let dropdownboxcaller = document.getElementById('dd');
     let dropdownbox = document.getElementById('dropdown');
     var count = 0;
@@ -55,8 +57,61 @@
             dropdownbox.style.display = 'none'
         }
     })
+
+    let searchBar = document.getElementById('searchDrop');
+
     let response = await getData('http://localhost:3000/products');
-    console.log(response)
+    appendData(response, searchBar);
+    let sInput = document.getElementById('searchinput');
+    sInput.addEventListener('click', () => {
+        searchBar.style.display = "block";
+    })
+    sInput.addEventListener('keypress', function () {
+        gD(event);
+    })
+
+    const gD = async (e) => {
+        try {
+            if (e.code === "Enter") {
+                let input = sInput.value;
+
+                let res = await fetch(`http://localhost:3000/products?q=${input}`);
+                let data = await res.json();
+                console.log(data);
+                appendData(data, searchBar);
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+
+    window.addEventListener('mouseup', (event) => {
+        if (event.target != searchBar) {
+            console.log(event.target);
+            searchBar.style.display = "none";
+        }
+    })
 </script>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- if (e.code == "Enter") {
+    let input = sInput.value;
+    // let res1 = await getData(`http://localhost:3000/products?q=${input}`);
+    console.log(input);
+} -->

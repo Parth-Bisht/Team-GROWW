@@ -4,4 +4,27 @@ const getData = async (url) => {
     return (data);
 }
 
-export { getData }
+const appendData = (data, parent) => {
+    parent.innerHTML = "";
+
+    data.forEach((ele) => {
+        let div = document.createElement('div');
+        div.addEventListener("click", () => {
+            let arr = [];
+            arr.push(ele);
+            localStorage.setItem('stock', JSON.stringify(arr));
+            // console.log(arr);
+        })
+
+        let name = document.createElement('p');
+        name.innerText = ele.product_name;
+
+        let des = document.createElement('p');
+        des.innerText = ele.amc;
+
+        div.append(name, des);
+        parent.append(div);
+    });
+}
+
+export { getData, appendData }
