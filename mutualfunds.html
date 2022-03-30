@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/mutualfunds.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="icon" href="https://groww.in/logo-groww270.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/157f106a6a.js" crossorigin="anonymous"></script>
     <title>Mutual Funds</title>
 </head>
@@ -235,6 +236,23 @@
             fundsContainer.append(div);
         }
     }
+
+    let stocksTab = document.getElementById('stocks');
+    let mfTab = document.getElementById('mutual');
+    let fTab = document.getElementById('fixed');
+    let usTab = document.getElementById('us');
+    mfTab.addEventListener('click', () => {
+        window.location.href = 'mutualfunds.html';
+    })
+    fTab.addEventListener('click', () => {
+        window.location.href = 'fixeddepo.html';
+    })
+    usTab.addEventListener('click', () => {
+        window.location.href = 'usStocks.html';
+    })
+    stocksTab.addEventListener('click', () => {
+        window.location.href = 'stocks.html';
+    })
 
     import footer from "./components/footer.js";
     let parent = document.getElementById('footer');

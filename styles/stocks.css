@@ -1,4 +1,6 @@
 *{
+    margin: 0;
+    padding: 0;
     font-family: Roboto, system-ui;
 }
 #container{
@@ -135,6 +137,9 @@ height: 68px;
     font-size: .875rem;
     font-weight: 500;
 }
+#nifty>div>p{
+    margin-bottom: 30px;
+}
 
 #second{
     border-radius: 5px;
@@ -193,13 +198,14 @@ height: 68px;
     align-items: center;
     flex-wrap: wrap;
     gap: 2%;
+    font-size: 13px;
 }
 #sec>div:hover{
 background-color: #f6f6f7;
 }
 #sec>div{
     display: block;
-    width: 162px;
+    width: 163px;
     display: flex;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     gap: 5%;
@@ -281,7 +287,9 @@ td:first-child:hover{
     justify-content: space-around;
     padding: 2%;
 }
-
+#Ns>div>p{
+    margin-bottom: 18px;
+}
 #Ns>div:hover{
     transform: scale(1.1);
 }
@@ -299,7 +307,7 @@ td:first-child:hover{
 #Ns>div{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     width: 135px;
-    height: 145px;
+    height: 125px;
     padding: 16px 0 16px 16px;
     margin-right: 22px;  
     border-radius: 8px;
@@ -318,6 +326,12 @@ td:first-child:hover{
 
 }
 
+#loose>div>p{
+    margin-bottom: 18px;
+}
+#gain>div>p{
+    margin-bottom: 18px;
+}
 #gain>div{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     width: 135px;
@@ -449,7 +463,9 @@ width: 50px;
     left: 8px;
     color: #828283
 }
-
+#stocks{
+    color: #00d09c;
+}
 #slider{
     border-bottom: 2px solid #00d09c;
     transform: rotate(180deg);
