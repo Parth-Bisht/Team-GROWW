@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
     <script src="https://kit.fontawesome.com/157f106a6a.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
@@ -74,6 +75,20 @@
             margin-top: 40px;
             
         }
+        .sipAmt>input{
+            background-color: #41ffd0;
+            width: 160px;
+            height: 30px;
+            margin-left: 250px;
+
+        }
+
+        .sipAmt>p{
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 15px;
+
+        }
 
         .value>p{
             font-weight: bold;
@@ -91,7 +106,7 @@
             margin-left: 40px;
         }
         .value3>button{
-            background-color: #58ffd5;
+            background-color: #00D09c;
             width: 150px;
             height: 40px;
             border-radius: 6%;
@@ -105,8 +120,8 @@
         }
        #addCart{
            display: flex;
-           justify-content: space-around;
-           padding-top: 1.7%;
+           margin-left: 100px;
+           padding-top: 17px;
            padding-bottom: 1%;
            padding-left: 8.5%;
            font-size: 21px;
@@ -114,20 +129,10 @@
            position: relative;
            }
        #addCart>div{
-           cursor: pointer;
-           }
-       #addCart>div:hover{
-           color: #00d09c;
-           }
-       #slider{
-           border-bottom: 2px solid #04dda7;
-           transform: rotate(180deg);
-           position: absolute;
-           width: 61px;
-           top: 58px;
-           left: 110px;
-           transition: all 0.5s ease-in-out;
-        }
+           font-size: larger;
+           font-weight: bolder;
+
+       }
         .cnt{
             height: 100%;
             width: 50%;
@@ -150,13 +155,16 @@
             font-size: larger;
             font-weight: 500;
         }
-        #stckDiv{
-            display: flex;
+        .cnt>h5{
+            margin-top: 20px;
+            color: #00d09c;
         }
-        .cnt1{
-            height: 100%;
-            width: 50%;
+        #dash{
+            margin-top: 5px;
+            border: 1px solid rgba(158, 152, 152, 0.74);
+
         }
+       
     </style>
 </head>
 
@@ -185,12 +193,11 @@
         <div id="buyStocks">
             <div id="insideDiv">
                 <div id="addCart">
-                    <div id="slider"></div>
                     <div id="monthlysip">MONTHLY SIP</div>
-                    <div id="oneTime">ONE TIME</div>
                 </div>
+                <div id="dash"></div>
 
-                <div class="value">
+                <div class="sipAmt">
                     <p>SIP Amount</p>
                     <input type="text" placeholder="  $                                0" />
                 </div>
@@ -207,6 +214,10 @@
 
             </div>
         </div>
+    </div>
+
+    <div id="footer">
+
     </div>
 
 </body>
@@ -288,7 +299,7 @@
 
     data.forEach(function(el){
         let div = document.createElement("div");
-        div.setAttribute("class","cnt")
+        div.setAttribute("class","cnt");
 
         let inrDiv = document.createElement("div");
 
@@ -296,21 +307,28 @@
         img.src = el.product_image;
 
         let name = document.createElement("p");
-        name.innerText = el.amc;
+        name.innerText = el.product_name;
+
+        let per = document.createElement("h5");
+        per.innerText = `(+`+el.return_percentage+`)`;
 
         let price = document.createElement("h1");
-        price.innerText = `$ `+ el.price;
+        price.innerText = `$ `+ el.nav;
 
-
-        let div1 = 
 
 
         inrDiv.append(img);
-        div.append(inrDiv, name, price);
+        div.append(inrDiv, name, price, per);
 
         document.getElementById("stckDiv").append(div);
 
     })
+
+
+
+    import footer from "./components/footer.js";
+    let par = document.getElementById('footer');
+    par.innerHTML = footer();
 
 </script>
 
