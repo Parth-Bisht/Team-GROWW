@@ -351,22 +351,23 @@ function append3(x, y) {
 
   y.innerHTML = "";
 
-  x.forEach(({ amc, nav ,rating}) => {
+  x.forEach(({ amc, nav, rating }) => {
 
     let innerdiv = document.createElement("div");
-    let div = document.createElement("div"); 
-    div.style.display="flex";
-    div.style.gap="5%"
+    let div = document.createElement("div");
+    div.style.display = "flex";
+    div.style.gap = "5%"
     let name = document.createElement("p");
     name.innerText = amc;
 
     let price = document.createElement("p");
-    price.innerText =  nav
+    price.innerText = nav
 
     let p = document.createElement("p");
-    p.innerText =rating
+    p.innerText = rating
     p.style.color = "#00d09c"
-    div.append(price,p)
+
+    div.append(price, p)
     innerdiv.append(name, div);
 
     y.append(innerdiv);
@@ -374,6 +375,6 @@ function append3(x, y) {
 
 }
 
-export { append3 } 
+export { append3 }
 
 

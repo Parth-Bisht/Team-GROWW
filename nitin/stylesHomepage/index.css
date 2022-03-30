@@ -28,7 +28,7 @@
  
 }
 
-i{
+#sidebar>div>i{
     width: 48px;
     padding: 18px 0px;
     background-color: #f6f6f7;
@@ -219,7 +219,13 @@ background-color: #f6f6f7;
 
 #Stocks{
     height: 700px;
-    overflow: scroll;
+    overflow: hidden;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 1e-9px;
+    flex-basis: 1e-9px;
+    overflow-y:auto;
 }
 
 table{
@@ -240,6 +246,7 @@ table{
   border: 1px solid #c8c9d3;;
     
 }
+
 thead,th{
     background-color: #f6f6f7;
     padding: 20px 0px;
@@ -275,6 +282,20 @@ td:first-child:hover{
     padding: 2%;
 }
 
+#Ns>div:hover{
+    transform: scale(1.1);
+}
+
+#loose>div:hover{
+    transform: scale(1.1);
+}
+
+#gain>div:hover{
+    transform: scale(1.1);
+}
+
+
+
 #Ns>div{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     width: 135px;
@@ -282,6 +303,8 @@ td:first-child:hover{
     padding: 16px 0 16px 16px;
     margin-right: 22px;  
     border-radius: 8px;
+    transition: transform .2s; /* Animation */
+
 }
 
 #loose>div{
@@ -291,6 +314,8 @@ td:first-child:hover{
     padding: 16px 0 16px 16px;
     margin-right: 22px;  
     border-radius: 8px;
+    transition: transform .2s; /* Animation */
+
 }
 
 #gain>div{
@@ -300,6 +325,8 @@ td:first-child:hover{
     padding: 16px 0 16px 16px;
     margin-right: 22px;  
     border-radius: 8px;
+    transition: transform .2s; /* Animation */
+
 }
 
 
@@ -355,9 +382,11 @@ width: 50px;
     width: 56%;
 }
 #searchbox{
-    width: 60%;
+    width: 80%;
     position: relative;
 }
+
+ 
 #searchbox>input{
     width: 100%;
     border-radius: 8px;
@@ -372,7 +401,6 @@ width: 50px;
 }
 #profilelinks{
     padding-left: 6%;
-    
     width: 47%;
     color: #828283;
     display: flex;
@@ -573,4 +601,4 @@ width: 50px;
   #fot-section-2 {
     width: 66%;
   }
-  
+
