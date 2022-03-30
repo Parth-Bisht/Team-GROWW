@@ -9,6 +9,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/usStock.css">
     <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
 </head>
 <body>
 
@@ -251,6 +252,10 @@
     <hr / class="lineTop">
     </div>
     
+
+    <div id="footer">
+
+    </div>
 </body>
 </html>
 <script src="./JS/usStock.js"></script>
@@ -261,7 +266,11 @@ import header from "./components/header.js";
     let parent = document.getElementById('header');
     parent.innerHTML = header();
 
-    
+    import footer from "./components/footer.js";
+    let parent2 = document.getElementById('footer');
+    parent2.innerHTML = footer();
+
+
 let stocks = document.getElementById('stocks');
     let mutualfunds = document.getElementById('mutual');
     let fixed = document.getElementById('fixed');

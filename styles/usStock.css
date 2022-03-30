@@ -342,3 +342,9 @@ margin: auto;
   font-size: 18px;
   border-radius: 6px;
 }
+
+#footer{
+    position: relative;
+    margin-top: 120%;
+    margin-bottom: 10px;
+}
