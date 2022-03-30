@@ -1,5 +1,5 @@
 const header = () => {
-    return `    <div id="navbar">
+    return `<div id="navbar">
     <div id="logoLinks">
         <div id="logo">
             <img src="https://hhooww.com/wp-content/uploads/2019/03/Groww-Mutual-Fund-App-Review.jpg"
