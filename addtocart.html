@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groww - My Cart</title>
+    <link rel="icon" href="https://groww.in/logo-groww270.png" type="image/x-icon">
+    <link rel = "stylesheet" href="/styles/navbar.css">
+    <link rel = "stylesheet" href="/styles/cart.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <script src="https://kit.fontawesome.com/157f106a6a.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+</head>
+
+<body >
+    <div id="header">
+        <!-------navbar is here just import it from components-------->
+
+    </div>
+
+    <div id="total">Total item : 
+        <span id="totalitem">0</span> 
+    </div>
+
+    <div id="all">
+
+    <div id="addtocart">
+    </div>
+
+    
+            <!-- cart data show -->
+
+    
+
+    <div id="container">
+        <div id="right_view_cart">
+            <h3 id="total_amount_headline">Amount Payable now <br>
+                <span id="total_amount1-1">0</span>
+            </h3>
+            <h1 id="total_amount"></h1>
+            <img src="//assets-netstorage.groww.in/web-assets/billion_groww_desktop/prod/build/client/images/secure-cart-page.382d7372.svg">
+            <p class="safe"> 100% SAFE AND SECURE</p>
+            <p>By Contnuing, you are agree to <a href='#' style="color: black;">Terms and Conditions</a></p>
+            <!-- <p id="total_amount1">Amount payable : <span id="total_amount1-1">0</span></p> -->
+            <button id="pay">
+            <a href="payment.html">PROCEED TO PAY</a></button> 
+        </div>
+    </div>
+    
+</div>
+
+
+
+    <button id="addmore">ADD MORE FUNDS</button>
+
+
+
+    <div id="footer">
+
+    </div>
+
+</body>
+
+
+
+<script type="module">
+    import header from "/components/header.js";
+    import { getData, appendData } from "/components/getandappend.js";
+    let parent = document.getElementById('header');
+    parent.innerHTML = header();
+
+
+    let stocks = document.getElementById('stocks');
+    let mutualfunds = document.getElementById('mutual');
+    let fixed = document.getElementById('fixed');
+    let us = document.getElementById('us');
+    stocks.addEventListener('click', () => {
+        slider.style.left = "110px";
+        slider.style.width = "64px";
+    })
+    mutualfunds.addEventListener('click', () => {
+        slider.style.left = "205px";
+        slider.style.width = "119px";
+    })
+    fixed.addEventListener('click', () => {
+        slider.style.left = "358px";
+        slider.style.width = "128px";
+    })
+    us.addEventListener('click', () => {
+        slider.style.left = "524px";
+        slider.style.width = "90px";
+    })
+
+
+    let dropdownboxcaller = document.getElementById('dd');
+    let dropdownbox = document.getElementById('dropdown');
+    var count = 0;
+    dropdownboxcaller.addEventListener('click', function () {
+        count++;
+        if (count % 2 == 1) {
+            dropdownbox.style.display = 'block'
+        }
+        else {
+            dropdownbox.style.display = 'none'
+        }
+    })
+
+    let searchBar = document.getElementById('searchDrop');
+
+    let response = await getData('http://localhost:3000/products');
+    appendData(response, searchBar);
+    let sInput = document.getElementById('searchinput');
+    sInput.addEventListener('click', () => {
+        searchBar.style.display = "block";
+    })
+    sInput.addEventListener('keypress', function () {
+        gD(event);
+    })
+
+    const gD = async (e) => {
+        try {
+            if (e.code === "Enter") {
+                let input = sInput.value;
+
+                let res = await fetch(`http://localhost:3000/products?q=${input}`);
+                let data = await res.json();
+                console.log(data);
+                appendData(data, searchBar);
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+
+    window.addEventListener('mouseup', (event) => {
+        if (event.target != searchBar) {
+            console.log(event.target);
+            searchBar.style.display = "none";
+        }
+    })
+
+
+</script>
+
+<!-- <script src="/JS/header"></script> -->
+<script src="/JS/cart.js"></script> 
+<script src="/JS/data.js"></script>
+
+
+</html>
+<!-- <script src="/scripts/data.js"></script> -->
+<!-- <script src="/scripts/cart.js"></script> -->
