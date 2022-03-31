@@ -46,7 +46,7 @@ function otpgen() {
         else {
             alert("Login Success!")
 
-            window.location.href = "./email.html"
+            window.location.href = "./stocks.html"
         }
 
     })

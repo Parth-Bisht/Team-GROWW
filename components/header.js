@@ -22,15 +22,15 @@ const header = () => {
             <i class="fa-brands fa-opencart leftmargin"></i>
             <div class="leftmargin" id="profile">
 
-                <img src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
+             <img  id="cart" src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
                 <div id="dropdown">
                 <div id="userinfo">
                     <div id="profile">
                         <img src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
                     </div>
                     <div id="nameid">
-                        <p>Parth Bisht</p>
-                        <p>bishtparth795@gmail.com</p>
+                        <p>TeamGroww</p>
+                        <p>TeamGroww098@gmail.com</p>
                     </div>
                 </div>
                 <div class="dropinfo">
