@@ -13,6 +13,7 @@ const appendData = (data, parent) => {
             let arr = [];
             arr.push(ele);
             localStorage.setItem('stock', JSON.stringify(arr));
+            window.location.href = 'buyStocks.html';
             // console.log(arr);
         })
 

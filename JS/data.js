@@ -322,18 +322,25 @@ function append2(newsData, m) {
 
   m.innerHTML = "";
 
-  newsData.forEach(({ amc, nav, product_image }) => {
+  newsData.forEach((ele) => {
 
     let innerdiv = document.createElement("div");
+    innerdiv.addEventListener('click', () => {
+      let arr = [];
+      arr.push(ele);
+      localStorage.setItem('stock', JSON.stringify(arr));
+      window.location.href = 'buyStocks.html';
+      // console.log(arr)
+    })
 
     let name = document.createElement("p");
-    name.innerText = amc;
+    name.innerText = ele.amc;
 
     let price = document.createElement("p");
-    price.innerText = "₹" + nav
+    price.innerText = "₹" + ele.nav
 
     let icon = document.createElement("img");
-    icon.src = product_image;
+    icon.src = ele.product_image;
 
     innerdiv.append(icon, name, price);
 
@@ -352,20 +359,27 @@ function append3(x, y) {
 
   y.innerHTML = "";
 
-  x.forEach(({ amc, nav, rating }) => {
+  x.forEach((ele) => {
 
     let innerdiv = document.createElement("div");
+    innerdiv.addEventListener('click', () => {
+      let arr = [];
+      arr.push(ele);
+      localStorage.setItem('stock', JSON.stringify(arr));
+      window.location.href = 'buyStocks.html';
+      // console.log(arr)
+    })
     let div = document.createElement("div");
     div.style.display = "flex";
     div.style.gap = "5%"
     let name = document.createElement("p");
-    name.innerText = amc;
+    name.innerText = ele.amc;
 
     let price = document.createElement("p");
-    price.innerText = nav
+    price.innerText = ele.nav
 
     let p = document.createElement("p");
-    p.innerText = rating
+    p.innerText = ele.rating
     p.style.color = "#00d09c"
 
     div.append(price, p)

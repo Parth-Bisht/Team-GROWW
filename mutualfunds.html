@@ -220,6 +220,7 @@
                 let arr = [];
                 arr.push(data[i]);
                 localStorage.setItem('stock', JSON.stringify(arr));
+                window.location.href = 'buyStocks.html';
                 // console.log(arr);
             })
 
@@ -237,7 +238,7 @@
             fundsContainer.append(div);
         }
     }
-
+    let cart = document.getElementById('cart');
     let stocksTab = document.getElementById('stocks');
     let mfTab = document.getElementById('mutual');
     let fTab = document.getElementById('fixed');
@@ -253,6 +254,9 @@
     })
     stocksTab.addEventListener('click', () => {
         window.location.href = 'stocks.html';
+    })
+    cart.addEventListener('click', () => {
+        window.location.href = 'addtocart.html';
     })
 
     import footer from "./components/footer.js";

@@ -19,7 +19,7 @@ const header = () => {
         <div id="profilelinks">
             <i class="fa-regular fa-bell leftmargin"></i>
             <i class="fa-solid fa-wallet leftmargin"></i>
-            <i class="fa-brands fa-opencart leftmargin"></i>
+            <i id="cart" class="fa-brands fa-opencart leftmargin"></i>
             <div class="leftmargin" id="profile">
 
              <img  id="cart" src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
