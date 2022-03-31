@@ -193,6 +193,7 @@
             width: 50%;
         }
     </style>
+
 </head>
 
 <body>
@@ -286,9 +287,43 @@
             <div id="performance">
                 <img src="./Images/performance report.png" alt="">
             </div>
+            
+
+
             <div id="analystEstimates">
-                <img src="./Images/analystEst.png" alt="">
+                <div id="a">
+                    <h3>Analyst Estimates</h3>
+                    <div><img src="https://www.svgimages.com/svg-image/s4/i-logo-256x256.png" alt=""></div>
+                </div>
+                <div id="b">
+                    <div class="b1"><h1>81%</h1></div>
+                    <div class="b2">
+                        <div id="b21">
+                            <p>Buy</p>
+                            <div></div>
+                            <p>81%</p>
+                        </div>
+                        <div id="b22">
+                            <p>Hold</p>
+                            <div></div>
+                            <p>13%</p>
+                        </div>
+                        <div id="b23">
+                            <p>Sell</p>
+                            <div></div>
+                            <p>6%</p>
+                        </div>
+                        <div id="b24">
+                            <p>
+                                Aggregatedby Refinitiv from 32 Analysts
+                            </p>
+                    </div>
+                    </div>
+                </div>
             </div>
+
+
+
             <div id="shareholder">
                 <h3>Recently Viewed</h3>
                 <div id="funds">
@@ -296,13 +331,9 @@
                 </div>
             </div>
             
-
-
-
-
-
-
         </div>
+
+        
         <div id="buyStocks">
             <div id="insideDiv">
                 <div id="addCart">
@@ -312,7 +343,7 @@
 
                 <div class="sipAmt">
                     <p>SIP Amount</p>
-                    <input type="text" placeholder="  $                                0" />
+                    <input type="text" placeholder="  ₹                                 0" />
                 </div>
 
                 <div class="value">
@@ -356,12 +387,18 @@
     import header from "./components/header.js";
 
 
+import header from "./components/header.js";
+
 
     // import header from "./components/header.js";
 
     import { getData, appendData } from "./components/getandappend.js";
     // let parent = document.getElementById('header');
     // parent.innerHTML = header();
+
+import { getData, appendData } from "./components/getandappend.js";
+     let parent = document.getElementById('header');
+     parent.innerHTML = header();
 
 
     let dropdownboxcaller = document.getElementById('dd');
@@ -456,11 +493,6 @@
     })
 
 
-
-
-
-
-
     let fundsData = await getData('http://localhost:3000/products');
     let fundsContainer = document.getElementById('funds');
     appendFunds(fundsData);
@@ -474,7 +506,7 @@
                 localStorage.setItem('stock', JSON.stringify(arr));
                 // console.log(arr);
 
-                //window.location.href="mutualfunds.html"
+                window.location.href="mutualfunds.html"
             })
 
 

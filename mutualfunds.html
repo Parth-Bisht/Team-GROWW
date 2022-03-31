@@ -209,6 +209,7 @@
 <script type="module">
     import { getData } from "./components/getandappend.js";
     let fundsData = await getData('http://localhost:3000/products');
+    console.log(fundsData)
     let fundsContainer = document.getElementById('funds');
     appendFunds(fundsData);
     function appendFunds(data) {
