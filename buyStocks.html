@@ -11,9 +11,6 @@
     <script src="https://kit.fontawesome.com/157f106a6a.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
-<<<<<<< HEAD:buyStocks.html
-       
-=======
         #line {
             width: 100%;
         }
@@ -193,7 +190,6 @@
             height: 100%;
             width: 50%;
         }
->>>>>>> 3a57d0925e39fadee9699e6bac612e76cc7cb7c0:overview.html
     </style>
 </head>
 
@@ -337,30 +333,9 @@
 
 </body>
 <script type="module">
-<<<<<<< HEAD:buyStocks.html
-     //import header from "./components/overview.js";  //importing header
-    // let parent = document.getElementById('header'); //grabing header
-    // parent.innerHTML = header(); //function call
-
-    // let dropdownboxcaller = document.getElementById('dd');
-    // let dropdownbox = document.getElementById('dropdown');
-    // dropdownboxcaller.addEventListener('click', function () {
-    //     if (dropdownbox.style.display = 'none') {
-
-    //         dropdownbox.style.display = 'block'
-    //     }
-    //     else if (dropdownbox.style.display = 'block') {
-    //         console.log("chl")
-    //         dropdownbox.style.display = 'none'
-    //     }
-    // });
-
-    import header from "./components/header.js";
-=======
 
 
     // import header from "./components/header.js";
->>>>>>> 3a57d0925e39fadee9699e6bac612e76cc7cb7c0:overview.html
     import { getData, appendData } from "./components/getandappend.js";
     // let parent = document.getElementById('header');
     // parent.innerHTML = header();
@@ -420,11 +395,7 @@
 
     data.forEach(function (el) {
         let div = document.createElement("div");
-<<<<<<< HEAD:buyStocks.html
-        div.setAttribute("class","cnt");
-=======
         div.setAttribute("class", "cnt")
->>>>>>> 3a57d0925e39fadee9699e6bac612e76cc7cb7c0:overview.html
 
         let inrDiv = document.createElement("div");
 
@@ -434,29 +405,17 @@
         let name = document.createElement("p");
         name.innerText = el.product_name;
 
-<<<<<<< HEAD:buyStocks.html
-        let per = document.createElement("h5");
-        per.innerText = `(+`+el.return_percentage+`)`;
-=======
         let price = document.createElement("h1");
         price.innerText = `₹` + el.nav;
->>>>>>> 3a57d0925e39fadee9699e6bac612e76cc7cb7c0:overview.html
 
         let price = document.createElement("h1");
         price.innerText = `$ `+ el.nav;
 
-<<<<<<< HEAD:buyStocks.html
-
-
-        inrDiv.append(img);
-        div.append(inrDiv, name, price, per);
-=======
         let div1 =
 
 
             inrDiv.append(img);
         div.append(inrDiv, name, price);
->>>>>>> 3a57d0925e39fadee9699e6bac612e76cc7cb7c0:overview.html
 
         document.getElementById("stckDiv").append(div);
 
