@@ -24,7 +24,7 @@
             <div style="margin-bottom: 85px;" id="popularFunds">
                 <div id="heading">
                     <p>Popular Funds</p>
-                    <button>SCREENER</button>
+                    <button onclick="gotoscreener()">SCREENER</button>
                 </div>
                 <div id="funds">
 
@@ -262,4 +262,10 @@
     import footer from "./components/footer.js";
     let parent = document.getElementById('footer');
     parent.innerHTML = footer();
+</script>
+
+<script>
+    function gotoscreener() {
+        window.location.href = 'screener.html';
+    }
 </script>

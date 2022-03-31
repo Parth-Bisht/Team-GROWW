@@ -19,7 +19,7 @@
             <div id="index">
                 <div id="title">
                     <h1>Index</h1>
-                    <P>SCREENER</P>
+                    <P style="cursor: pointer;" onclick="gotoscreener()">SCREENER</P>
                 </div>
                 <div id="nifty"></div>
             </div>
@@ -39,7 +39,7 @@
                         <p>NIFTY100</p>
                     </div>
 
-                    <P style="background-color:white;">SEE MORE</P>
+                    <P style="cursor: pointer; background-color:white;" onclick="gotoscreener()">SEE MORE</P>
                 </div>
                 <div id="gain"></div>
             </div>
@@ -51,7 +51,7 @@
                         <p>NIFTY100</p>
                     </div>
 
-                    <P style="background-color:white;">SEE MORE</P>
+                    <P style="cursor: pointer; background-color:white;" onclick="gotoscreener()">SEE MORE</P>
                 </div>
                 <div id="loose"></div>
             </div>
@@ -195,7 +195,11 @@
 
 
 </script>
-
+<script>
+    function gotoscreener() {
+        window.location.href = 'screener.html';
+    }
+</script>
 <script type="module">
 
     import navbar from "./components/header.js"
@@ -277,7 +281,7 @@
             searchBar.style.display = "none";
         }
     })
-
+    let cart = document.getElementById('cart');
     let stocksTab = document.getElementById('stocks');
     let mfTab = document.getElementById('mutual');
     let fTab = document.getElementById('fixed');
@@ -293,6 +297,9 @@
     })
     stocksTab.addEventListener('click', () => {
         window.location.href = 'stocks.html';
+    })
+    cart.addEventListener('click', () => {
+        window.location.href = 'addtocart.html';
     })
 </script>
 
