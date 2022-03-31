@@ -1,9 +1,9 @@
-async function updateTotalPrice(cart){
+async function updateTotalPrice(cart) {
     let data = await fetch(`http://localhost:7500/payment/price`);
     let totalPrice = await data.json();
     console.log(totalPrice.sum);
     let totalDiv = document.getElementById('total_amount');
-    totalDiv.textContent = '₹'+ totalPrice.sum;
+    totalDiv.textContent = '₹' + totalPrice.sum;
 }
 
 let arr = document.querySelectorAll("form");
@@ -55,9 +55,9 @@ function paymentMethod(e) {
     const netBankingcheck = /^(?=[a-zA-Z0-9.]{8,20}$)(?!.*[.]{2})[^.].*[^.]$/;
     const creditCardcheck = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
     // /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
-    if(curButton=='upiData'){
-        if(upicheck.test(e.target.vpa.value)){
-            async function sendData(){
+    if (curButton == 'upiData') {
+        if (upicheck.test(e.target.vpa.value)) {
+            async function sendData() {
                 let upiValue = e.target.vpa.value;
                 // console.log(upiValue);
                 let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"UPI"}`);
@@ -68,13 +68,13 @@ function paymentMethod(e) {
             sendData();
             window.location.href = "netbanking";
         }
-        else{
+        else {
             alert("Enter a valid UPI Id");
         }
     }
-    else if(curButton=='netBankingData'){
-        if(netBankingcheck.test(e.target.username.value)){
-            async function sendData(){
+    else if (curButton == 'netBankingData') {
+        if (netBankingcheck.test(e.target.username.value)) {
+            async function sendData() {
                 let upiValue = e.target.username.value;
                 // console.log(upiValue);
                 let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"Net_Banking"}`);
@@ -85,13 +85,13 @@ function paymentMethod(e) {
             sendData();
             window.location.href = "netbanking";
         }
-        else{
+        else {
             alert('Enter a valid net banking username')
         }
     }
-    else if(curButton=='creditCardData'){
-        if(creditCardcheck.test(e.target.creditCardNumber.value)){
-            async function sendData(){
+    else if (curButton == 'creditCardData') {
+        if (creditCardcheck.test(e.target.creditCardNumber.value)) {
+            async function sendData() {
                 let upiValue = e.target.creditCardNumber.value;
                 // console.log(upiValue);
                 let data = await fetch(`http://localhost:7500/payment/${upiValue}/${"Credit_card"}`);
@@ -102,7 +102,7 @@ function paymentMethod(e) {
             sendData();
             window.location.href = "netbanking";
         }
-        else{
+        else {
             alert('Enter a valid credit card number');
         }
     }
@@ -111,57 +111,57 @@ function paymentMethod(e) {
 // cart data show_________________________________________________________________________________________________
 
 
-let local = JSON.parse(localStorage.getItem("cartdata")) || [];
+let local = JSON.parse(localStorage.getItem("cartData")) || [];
 display(local)
 
-function display(local){
+function display(local) {
 
-    local.forEach((el)=>{
+    local.forEach((el) => {
         let cart = document.getElementById("cartdata")
         let div = document.createElement('div')
-        div.setAttribute('id',"appendDiv")
+        div.setAttribute('id', "appendDiv")
 
         // div.style.border="1px solid red"
 
-        let div1=document.createElement('div')
-        div1.style.display="flex"
+        let div1 = document.createElement('div')
+        div1.style.display = "flex"
 
         let title = document.createElement("h4")
-        title.setAttribute("id","title")
-        title.innerText=el.product_name;
+        title.setAttribute("id", "title")
+        title.innerText = el.product_name;
 
-        let image= document.createElement("img")
-        image.src=el.product_image;
-        image.setAttribute("id","appendImage")
-        image.style.height="70px"
+        let image = document.createElement("img")
+        image.src = el.product_image;
+        image.setAttribute("id", "appendImage")
+        image.style.height = "70px"
 
-        
+
         let amount = document.createElement('p')
-        amount.setAttribute("id","amount")
-        amount.innerText="Amount : ₹ "+el.nav;
-        amount.style.fontWeight="600"
-        
-    
+        amount.setAttribute("id", "amount")
+        amount.innerText = "Amount : ₹ " + el.amount;
+        amount.style.fontWeight = "600"
 
-div1.append(image,title)
-div.append(div1,amount)
-cart.append(div)
-})
+
+
+        div1.append(image, title)
+        div.append(div1, amount)
+        cart.append(div)
+    })
     console.log(local)
 
 
     let sum = 0
-    for(var j =0;j<local.length;j++){
-        sum += Number(local[j].nav)
+    for (var j = 0; j < local.length; j++) {
+        sum += Number(local[j].amount)
     }
     console.log(sum)
     let totalamount = document.getElementById("total_amount")
-    totalamount.innerText="₹ "+sum
-    totalamount.style.fontSize="16px"
-    totalamount.style.fontWeight="bold"
+    totalamount.innerText = "₹ " + sum
+    totalamount.style.fontSize = "16px"
+    totalamount.style.fontWeight = "bold"
 
 }
 let totalitems = document.getElementById("totalitem")
-totalitems.innerText="("+local.length+")"
+totalitems.innerText = "(" + local.length + ")"
 
 

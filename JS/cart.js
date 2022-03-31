@@ -3,7 +3,7 @@
 function gotostocks() {
     window.location.href = 'stocks.html';
 }
-let local = JSON.parse(localStorage.getItem("cartdata")) || [];
+let local = JSON.parse(localStorage.getItem("cartData")) || [];
 display(local)
 
 function display(local) {
@@ -30,7 +30,7 @@ function display(local) {
 
         let amount = document.createElement('p')
         amount.setAttribute("id", "amount")
-        amount.innerText = "Amount : ₹ " + el.nav;
+        amount.innerText = "Amount : ₹ " + el.amount;
         amount.style.fontWeight = "600"
 
 
@@ -45,7 +45,7 @@ function display(local) {
 
     let sum = 0
     for (var j = 0; j < local.length; j++) {
-        sum += Number(local[j].nav)
+        sum += Number(local[j].amount)
     }
     console.log(sum)
     let totalamount = document.getElementById("total_amount1-1")

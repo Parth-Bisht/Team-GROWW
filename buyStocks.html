@@ -37,7 +37,7 @@
                 <div id="profilelinks">
                     <i class="fa-regular fa-bell leftmargin"></i>
                     <i class="fa-solid fa-wallet leftmargin"></i>
-                    <i class="fa-brands fa-opencart leftmargin"></i>
+                    <i id="cart" class="fa-brands fa-opencart leftmargin"></i>
                     <div class="leftmargin" id="profile">
 
                         <img src="https://avatars.githubusercontent.com/u/55929607?v=4" alt="">
@@ -162,7 +162,7 @@
 
                 <div class="sipAmt">
                     <p>SIP Amount</p>
-                    <input type="text" placeholder="  ₹ 0" />
+                    <input id="sipAmount" type="text" placeholder="  ₹ 0" />
                 </div>
 
                 <div class="value">
@@ -171,8 +171,8 @@
                 </div>
                 <div class="value3">
                     <p>Next SIP Instalment on 15-12-2022</p>
-                    <button>ADD TO CART</button>
-                    <button>GO TO CART</button>
+                    <button style="cursor: pointer;" onclick="addtobag()">ADD TO CART</button>
+                    <button style="cursor: pointer;" onclick="window.location.href='addtocart.html'">GO TO CART</button>
                 </div>
 
             </div>
@@ -314,7 +314,22 @@
 
 </html>
 <script>
+    let cartData = JSON.parse(localStorage.getItem('cartData')) || [];
     function gotostocks() {
         window.location.href = 'stocks.html';
+    }
+    let cart = document.getElementById('cart');
+    cart.addEventListener('click', () => {
+        window.location.href = 'addtocart.html';
+    })
+
+    function addtobag() {
+        let sipAmount = document.getElementById('sipAmount');
+        let itemData = JSON.parse(localStorage.getItem('stock'));
+        itemData[0].amount = sipAmount.value;
+        cartData.push(itemData[0]);
+        localStorage.setItem('cartData', JSON.stringify(cartData));
+        // console.log(itemData[0]);
+        window.location.href = 'addtocart.html';
     }
 </script>
