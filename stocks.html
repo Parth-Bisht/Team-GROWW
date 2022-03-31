@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://groww.in/logo-groww270.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/4f2af7deb6.js" crossorigin="anonymous"></script>
     <title>stocks</title>
 </head>
-<link rel="stylesheet" href="./stylesHomepage/index.css">
+<link rel="stylesheet" href="styles/stocks.css">
 
 <body>
     <div id="nav"></div>
@@ -117,7 +118,7 @@
                         </thead>
                         <tbody></tbody>
                     </table>
-       
+
                 </div>
             </div>
         </div>
@@ -148,13 +149,13 @@
     <br>
     <div id="footer"></div>
 </body>
-<script src="./script/index.js"></script>
+<script src="JS/stocks.js"></script>
 
 </html>
 
 <script type="module">
 
-    import { append2 } from "./script/data.js"
+    import { append2 } from "./JS/data.js"
 
     let newsData = JSON.parse(localStorage.getItem("news"))
     let m = document.getElementById("Ns");
@@ -178,7 +179,7 @@
     //------------------------------------------------------------------------------------------
 
 
-    import { append3 } from "./script/data.js"
+    import { append3 } from "./JS/data.js"
 
     let x = JSON.parse(localStorage.getItem("index"))
     console.log("x", x)
@@ -197,13 +198,13 @@
 
 <script type="module">
 
-    import navbar from "../components/header.js"
+    import navbar from "./components/header.js"
     console.log(navbar)
 
     let header = document.getElementById("nav");
     header.innerHTML = navbar();
 
-    import { getData, appendData } from "../components/getandappend.js"
+    import { getData, appendData } from "./components/getandappend.js"
 
 
     let stocks = document.getElementById('stocks');
@@ -276,10 +277,27 @@
             searchBar.style.display = "none";
         }
     })
+
+    let stocksTab = document.getElementById('stocks');
+    let mfTab = document.getElementById('mutual');
+    let fTab = document.getElementById('fixed');
+    let usTab = document.getElementById('us');
+    mfTab.addEventListener('click', () => {
+        window.location.href = 'mutualfunds.html';
+    })
+    fTab.addEventListener('click', () => {
+        window.location.href = 'fixeddepo.html';
+    })
+    usTab.addEventListener('click', () => {
+        window.location.href = 'usStocks.html';
+    })
+    stocksTab.addEventListener('click', () => {
+        window.location.href = 'stocks.html';
+    })
 </script>
 
 <script type="module">
-    import footer from "../components/footer.js";
+    import footer from "./components/footer.js";
     let parent = document.getElementById('footer');
     parent.innerHTML = footer();
 </script>
