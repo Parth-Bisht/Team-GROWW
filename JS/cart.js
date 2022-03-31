@@ -7,9 +7,9 @@ let local = JSON.parse(localStorage.getItem("cartData")) || [];
 display(local)
 
 function display(local) {
-
-    local.forEach((el) => {
-        let cart = document.getElementById("addtocart")
+    let cart = document.getElementById("addtocart")
+    cart.innerHTML = "";
+    local.forEach((el, ind) => {
         let div = document.createElement('div')
         div.setAttribute('id', "appendDiv")
 
@@ -33,8 +33,16 @@ function display(local) {
         amount.innerText = "Amount : ₹ " + el.amount;
         amount.style.fontWeight = "600"
 
+        let del = document.createElement('div');
+        del.id = 'icon';
+        del.style.position = 'absolute'
+        del.style.left = '43%'
+        del.addEventListener('click', () => {
+            remove(ind);
+        });
+        del.innerHTML = `<i class="material-icons">delete</i>`
 
-        div1.append(image, title)
+        div1.append(image, title, del)
         div.append(div1, amount)
         cart.append(div)
 
@@ -60,4 +68,10 @@ let totalitems = document.getElementById("totalitem")
 totalitems.innerText = "(" + local.length + ")"
 
 
-
+const remove = (ind) => {
+    console.log(ind);
+    local.splice(ind, 1);
+    console.log(local);
+    localStorage.setItem('cartData', JSON.stringify(local));
+    display(local);
+}
