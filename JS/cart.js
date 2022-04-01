@@ -60,12 +60,14 @@ function display(local) {
     totalamount.innerText = "₹  " + sum
     totalamount.style.fontSize = "20px"
     totalamount.style.color = "black"
-    totalamount.style.fontWeight = "bold"
+    totalamount.style.fontWeight = "bold";
+
+
+    let totalitems = document.getElementById("totalitem")
+    totalitems.innerText = "(" + local.length + ")"
 
 }
 
-let totalitems = document.getElementById("totalitem")
-totalitems.innerText = "(" + local.length + ")"
 
 
 const remove = (ind) => {
